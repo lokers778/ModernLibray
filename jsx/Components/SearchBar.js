@@ -8,7 +8,9 @@ onChange=(event)=>{
        this.setState({searchedTerm:event.target.value})
 }
 onSubmit=(event)=>{
-       event.preventDefault()
+       event.preventDefault();
+
+    this.props.onTermSubmit(this.state.searchedTerm)
 }
     render() {
         return (

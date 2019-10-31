@@ -1,17 +1,21 @@
 import React from "react"
 import BookItem from "./BookItem";
 
-class BooksList extends React.Component {
-    render() {
-        return (
-            <>
-                <h2>bookList</h2>
-                <BookItem/>
-                <BookItem/>
-                <BookItem/>
-            </>
-        )
-    }
+const BooksList = (props) => {
+
+
+    const listOfBooks = props.books.map((book) => {
+        return <BookItem key={book.id} book={book}/>
+    });
+    return (
+        <>
+            <h2>bookList</h2>
+            <div>
+                {listOfBooks}
+            </div>
+        </>
+
+    )
 }
 
 export default BooksList

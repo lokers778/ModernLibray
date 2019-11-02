@@ -3,8 +3,8 @@ import BookItem from "./BookItem";
 
 const BooksList = (props) => {
 
-    const listOfBooks = props.books.map((book) => {
-        return <BookItem key={book.id} book={book}/>
+    const listOfBooks = props.books.map((book,index) => {
+        return <BookItem key={index} book={book}/>
     });
 
     return (

@@ -9,23 +9,39 @@ class App extends React.Component {
         booksOnSite:[],
         booksToRender:[],
         fetchedData:false,
+        searchBy:"",
     };
+
+
 onTermSubmit=(term,index=0)=> {
-    console.log(term)
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}&startIndex=${index}&key=${key}&maxResults=10`,{
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchBy}:${term}:&startIndex=${index}&key=${key}&maxResults=10`,{
     })
         .then(res=>res.json())
+        .catch((err)=>{console.log("Problem with connection to data base")})
         .then(res=>this.setState({booksToRender:res.items}))
         .then(()=>this.setState({booksOnSite:[...this.state.booksOnSite,...this.state.booksToRender]}))
+        .catch((err)=>{alert("Sorry we cant find any results")})
         .then(()=>{this.setState({fetchedData:true})})
-}
 
+};
+
+    onNewTerm=()=>{
+        this.setState({
+            booksOnSite: [],
+        })
+    }
+    onSearchBy=(param)=>{
+        this.setState({
+            searchBy: param,
+        },()=>{      console.log(this.state.searchBy)})
+
+    }
 
     render() {
         return (
             <div className="container">
                 <h1>Modern Libray</h1>
-                <SearchBar onTermSubmit={this.onTermSubmit} fetchedData={this.state.fetchedData} />
+                <SearchBar onTermSubmit={this.onTermSubmit} fetchedData={this.state.fetchedData}  onNewTerm={this.onNewTerm} onSearchBy={this.onSearchBy}/>
                 <BooksList books={this.state.booksOnSite}/>
             </div>
         )

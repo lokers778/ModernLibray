@@ -9,7 +9,6 @@ onChange=(event)=>{
 }
 onSubmit=(event)=>{
        event.preventDefault();
-
     this.props.onTermSubmit(this.state.searchedTerm)
 }
     render() {
@@ -17,11 +16,7 @@ onSubmit=(event)=>{
             <>
                 <div className="search-bar">
                     <form onSubmit={this.onSubmit}>
-                        <div className="search-bar-input-field">
-                            <label>Book Search
                                 <input type="text" id="book" name="book" value={this.state.searchedTerm} onChange={this.onChange}/>
-                            </label>
-                        </div>
                         <button type="submit" value="send"/>
                     </form>
                 </div>

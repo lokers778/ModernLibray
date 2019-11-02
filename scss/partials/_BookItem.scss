@@ -1,0 +1,33 @@
+$background-book-item: green;
+
+.book-item {
+  margin: 2vw 0;
+  width: 100%;
+  background-color: $background-book-item;
+  padding: 2vw 2vw;
+
+  h3 {
+    font-size: 20px;
+    margin: 2% 0;
+  }
+
+  img {
+    width: 25%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  p {
+    width: 75%;
+    padding: 6% 1vw;
+    font-size: 25px;
+    overflow: hidden;
+    max-height: 86%;
+  }
+
+  div {
+    display: flex;
+    height: 25vw;
+    overflow: hidden;
+  }
+}

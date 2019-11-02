@@ -1,0 +1,21 @@
+$background-color:red;
+$container-color:blue;
+$search-bar:green;
+$headers-color:orange;
+
+body{
+  background-color: $background-color;
+}
+.container{
+  width:80vw;
+  margin:5vw auto;
+  max-width: 1300px;
+  background-color: $container-color;
+  min-height: 80vh;
+}
+h1{
+  font-size: 40px;
+  text-align: center;
+  padding: 3vw 0;
+  color:$headers-color;
+}

@@ -1,0 +1,25 @@
+.search-bar {
+  background-color: $search-bar;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  height: 4vw;
+}
+
+form {
+  height: 100%;
+  width: 100%;
+  padding: 1vw 2vw;
+  display: flex;
+justify-content: center;
+  button {
+    height: 100%;
+    width: 10%;
+    font-size: 22px;
+  }
+    input {
+      font-size: 22px;
+      height: 100%;
+      width: 80%;
+    }
+  }

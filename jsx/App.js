@@ -15,9 +15,10 @@ onTermSubmit=(term,index=0)=> {
         .then(()=>{console.log(this.state.books)})
 }
 
+
     render() {
         return (
-            <div>
+            <div className="container">
                 <h1>Modern Libray</h1>
                 <SearchBar onTermSubmit={this.onTermSubmit} />
                 <BooksList books={this.state.books}/>

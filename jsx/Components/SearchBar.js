@@ -14,7 +14,6 @@ class SearchBar extends React.Component {
     };
 
     onSubmit = (event) => {
-        console.log(this.state)
         this.setState({previousSearchedTopic: this.state.searchTopic})
         this.setState({previousSearchedTerm: this.state.searchedTerm})
         event.preventDefault();

@@ -9,7 +9,7 @@ const BooksList = (props) => {
 
     return (
         <>
-            <h2>bookList</h2>
+            <h2>Book List</h2>
             <div className="book-list">
                 {listOfBooks}
             </div>

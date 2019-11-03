@@ -1,20 +1,32 @@
-$background-book-item: green;
+$background-book-item: rgba(9, 85, 115,0.9);
 
 .book-item {
   margin: 2vw 0;
   width: 100%;
   background-color: $background-book-item;
   padding: 2vw 2vw;
+  border:10px solid orange;
+  box-shadow: 0px 0px 34px orange;
+  transition: all 2s;
+  border-radius: 10%;
+  color:white;
+&:hover{
+  box-shadow: 0px 0px 50px orange;
+  transform: scale(1.05);
+  $background-book-item: rgba(9, 85, 115,1);
+}
 
   h3 {
     font-size: 20px;
     margin: 2% 0;
+    color:orange;
   }
 
   img {
     width: 25%;
     height: auto;
     object-fit: cover;
+    max-height: 86%;
   }
 
   p {

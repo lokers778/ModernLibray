@@ -1,3 +1,5 @@
+$button-color:orange;
+$button-text-color:$container-color;
 .search-bar {
   background-color: $search-bar;
   display: flex;
@@ -13,13 +15,41 @@ form {
   display: flex;
 justify-content: center;
   button {
+    background-color: $button-color;
+    color:$button-text-color;
     height: 100%;
     width: 10%;
     font-size: 22px;
+    font-family: 'Calligraffitti', cursive;
+    text-align: center;
+    transition: 1s;
+    box-shadow: 0px 5px 5px black;
+    font-weight: 600;
+    &:hover{
+      background-color: darkorange;
+      outline: #082D47 solid 1px;
+      box-shadow: 0px 0px 0px black;
+      text-decoration: underline;
+    }
   }
     input {
+      color:orange;
+      background-color : slategray;
       font-size: 22px;
       height: 100%;
       width: 80%;
+      &::-webkit-input-placeholder { /* Edge */
+        color: #ffb266;
+      }
+      &::placeholder {
+        color: #ffb266;
+      }
     }
+  select{
+    background-color:green ;
+    color:orange;
+    option{
+border-color:black;
+    }
+  }
   }

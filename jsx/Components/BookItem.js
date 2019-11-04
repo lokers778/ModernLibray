@@ -9,7 +9,7 @@ class BookItem extends React.Component {
                 <h3>Author: {this.props.book.volumeInfo.authors || "Anonymous Author"}</h3>
                 <div>
                     <img
-                        src={(this.props.book.volumeInfo.imageLinks !== undefined) ? this.props.book.volumeInfo.imageLinks.smallThumbnail : ".././assets/bookImage.png"}
+                        src={(this.props.book.volumeInfo.imageLinks !== undefined) ? this.props.book.volumeInfo.imageLinks.smallThumbnail : "assets/bookImage.png"}
                         alt={this.props.book.volumeInfo.title || "Ukknow title"}
                         title={this.props.book.volumeInfo.title || "Ukknow title"}/>
                     <p>{(this.props.book.volumeInfo.description !== undefined) ? this.props.book.volumeInfo.description : "Sorry we do not have a description available."}</p>
@@ -18,7 +18,6 @@ class BookItem extends React.Component {
             </div>
 
         )
-
     }
 }
 

@@ -38,6 +38,7 @@ class SearchBar extends React.Component {
         document.addEventListener('scroll', this.onScroll);
     }
 
+
     onScroll = () => {
         if (this.props.fetchedData === true) {
             const bookList = document.querySelector(".book-list")

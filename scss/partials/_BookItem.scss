@@ -1,25 +1,38 @@
-$background-book-item: rgba(9, 85, 115,0.9);
-
 .book-item {
+  overflow: hidden;
   margin: 2vw 0;
   width: 100%;
   background-color: $background-book-item;
   padding: 2vw 2vw;
-  border:10px solid orange;
+  border: 10px solid orange;
   box-shadow: 0px 0px 34px orange;
   transition: all 2s;
   border-radius: 10%;
-  color:white;
-&:hover{
-  box-shadow: 0px 0px 50px orange;
-  transform: scale(1.05);
-  $background-book-item: rgba(9, 85, 115,1);
-}
+  @media #{$mobile} {
+    &:hover p {
+      display: block;
+    }
+    &:hover img {
+      display: none;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 50px orange;
+    transform: scale(1.05);
+    $background-book-item: rgba(9, 85, 115, 1);
+  }
 
   h3 {
-    font-size: 20px;
+    font-size: 1.5rem;
     margin: 2% 0;
-    color:orange;
+    color: orange;
+    @media #{$tablet} {
+      font-size: 1.1rem;
+    }
+    @media #{$mobile} {
+      font-size: 1rem;
+    }
   }
 
   img {
@@ -27,19 +40,47 @@ $background-book-item: rgba(9, 85, 115,0.9);
     height: auto;
     object-fit: cover;
     max-height: 86%;
+    @media #{$mobile} {
+      margin: 0 auto;
+      width: 38%;
+      max-height: 100%;
+    }
   }
 
   p {
     width: 75%;
     padding: 6% 1vw;
-    font-size: 25px;
+    font-size: 1rem;
     overflow: hidden;
     max-height: 86%;
+    @media #{$tablet} {
+      padding: 1% 1vw;;
+    }
+    @media #{$mobile} {
+      margin: 0 auto;
+      min-height: 86%;
+      width: 100%;
+      display: none;
+    }
   }
 
   div {
     display: flex;
     height: 25vw;
     overflow: hidden;
+    flex-direction: row;
+    @media #{$tablet} {
+      height: 35vw;
+    }
+    @media #{$mobile} {
+      height: 50vw;
+      flex-direction: column;
+
+    }
+  }
+
+  span {
+    font-size: 0.8rem;
+    font-style: italic;
   }
 }

@@ -1,0 +1,25 @@
+//media
+$small-deskopt: "(min-width: 1024px) and (max-width:1400px)";
+$tablet: "(min-width: 641px) and (max-width: 1023px)";
+$mobile: "(max-width:640px)";
+//main
+$background-color: lightblue; //body bg color
+$container-color: #082D47;
+$search-bar: #095573;
+$headers-color: orange;
+$background-book-item: rgba(9, 85, 115, 0.9);
+$border-color: slategray;
+$main-font-color: white;
+//button
+$button-color: orange;
+$button-text-color: #082D47;
+$button-hover-color: darkorange;
+//input
+$input-background-color: slategray;
+$placeholder-color: #ffb266;
+$input-text-color: orange;
+//select
+$select-background-color: #082D47;
+$select-font-color: orange;
+$secondary-select-background-color: orange;
+$secondary-select-font-color: #082D47;

@@ -5,8 +5,8 @@ class SearchBar extends React.Component {
         searchedTerm: "",
         indexOnSearch: 0,
         previousSearchedTerm: "",
-        searchTopic:"",
-        previousSearchedTopic:""
+        searchTopic: "",
+        previousSearchedTopic: ""
     };
 
     onChange = (event) => {
@@ -20,12 +20,15 @@ class SearchBar extends React.Component {
         if (this.state.searchedTerm === "") {
             alert("The Search field cannot be empty !!")
         } else {
-            if(this.state.previousSearchedTerm!== this.state.searchedTerm){
-                this.props.onNewTerm()}
-            if(this.state.previousSearchedTerm=== this.state.searchedTerm&&this.state.previousSearchedTopic===this.state.searchTopic){
-                return}
-            if(this.state.previousSearchedTerm=== this.state.searchedTerm&&this.state.previousSearchedTopic!==this.state.searchTopic){
-                this.props.onNewTerm()}
+            if (this.state.previousSearchedTerm !== this.state.searchedTerm) {
+                this.props.onNewTerm()
+            }
+            if (this.state.previousSearchedTerm === this.state.searchedTerm && this.state.previousSearchedTopic === this.state.searchTopic) {
+                return
+            }
+            if (this.state.previousSearchedTerm === this.state.searchedTerm && this.state.previousSearchedTopic !== this.state.searchTopic) {
+                this.props.onNewTerm()
+            }
             this.props.onTermSubmit(this.state.searchedTerm, 0)
 
         }
@@ -44,12 +47,13 @@ class SearchBar extends React.Component {
             }
         }
     }
-    changeSearchTopic=(e)=>{
-        this.setState({searchTopic: e.target.value},()=>{
+    changeSearchTopic = (e) => {
+        this.setState({searchTopic: e.target.value}, () => {
             this.props.onSearchBy(this.state.searchTopic)
         });
 
     }
+
     render() {
         return (
             <>

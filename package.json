@@ -1,7 +1,7 @@
 {
   "name": "modernlibray",
   "version": "1.0.0",
-  "description": "React App - fetching data from Api",
+  "description": "React App - fetching data about books from Api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

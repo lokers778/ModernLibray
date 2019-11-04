@@ -1,11 +1,14 @@
-$button-color:orange;
-$button-text-color:$container-color;
 .search-bar {
   background-color: $search-bar;
-  display: flex;
-  flex-direction: column-reverse;
   width: 100%;
-  height: 4vw;
+  height: 6vw;
+  flex-wrap: wrap;
+  @media #{$tablet} {
+    height: 14vw;
+  }
+  @media #{$mobile} {
+    height: 40vw;
+  }
 }
 
 form {
@@ -13,43 +16,94 @@ form {
   width: 100%;
   padding: 1vw 2vw;
   display: flex;
-justify-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+
   button {
     background-color: $button-color;
-    color:$button-text-color;
+    color: $button-text-color;
     height: 100%;
     width: 10%;
-    font-size: 22px;
+    font-size: 1rem;
     font-family: 'Calligraffitti', cursive;
     text-align: center;
     transition: 1s;
     box-shadow: 0px 5px 5px black;
     font-weight: 600;
-    &:hover{
-      background-color: darkorange;
-      outline: #082D47 solid 1px;
+    outline: $button-text-color solid 1px;
+    border: $button-text-color;
+    @media #{$tablet} {
+      height: 50%;
+      width: 50%;
+      order: 2;
+    }
+    @media #{$mobile} {
+      height: 33.33333%;
+      width: 100%;
+      order: 3;
+    }
+
+    &:hover {
+      background-color: $button-hover-color;
       box-shadow: 0px 0px 0px black;
       text-decoration: underline;
     }
   }
-    input {
-      color:orange;
-      background-color : slategray;
-      font-size: 22px;
-      height: 100%;
-      width: 80%;
-      &::-webkit-input-placeholder { /* Edge */
-        color: #ffb266;
-      }
-      &::placeholder {
-        color: #ffb266;
-      }
+
+  input {
+    color: orange;
+    background-color: $input-background-color;
+    font-size: 1rem;
+    height: 100%;
+    width: 70%;
+
+    &::-webkit-input-placeholder {
+      color: $placeholder-color;
     }
-  select{
-    background-color:green ;
-    color:orange;
-    option{
-border-color:black;
+
+    :-ms-input-placeholder {
+      color: $placeholder-color;
+    }
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+
+    @media #{$tablet} {
+      height: 50%;
+      width: 100%;
+    }
+    @media #{$mobile} {
+      height: 33.33333%;
+      width: 100%;
+      order: 0;
     }
   }
+
+  select {
+
+    background-color: $select-background-color;
+    color: $select-font-color;
+    font-size: 20px;
+    overflow: hidden;
+    width: 10%;
+    height: 100%;
+    @media #{$tablet} {
+      height: 50%;
+      width: 50%;
+      order: 1;
+    }
+    @media #{$mobile} {
+      height: 33.33333%;
+      width: 100%;
+      order: 1;
+    }
+
+    option:nth-child(2n+1) {
+      background-color: $secondary-select-background-color;
+      color: $secondary-select-font-color;
+    }
+
   }
+}

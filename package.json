@@ -31,7 +31,7 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.11.3"
+    "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
